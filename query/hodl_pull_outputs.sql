@@ -1,5 +1,5 @@
 SELECT
-  t.block_number
+  t.block_timestamp
   , t.hash as rcvd_tx_hash
   , t.is_coinbase as is_coinbase
   , o.index as rcvd_tx_id

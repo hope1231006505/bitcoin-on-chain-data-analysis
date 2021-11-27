@@ -1,9 +1,10 @@
 SELECT
   address
-  , rcvd_block
+  , rcvd_timestamp
+  , rcvd_date
   , rcvd_v
-  , spnt_block
+  , spnt_timestamp
 FROM
   `{project_id}.{dataset}.{table_raw_utxos}`
 WHERE
-  spnt_block IS NOT NULL
+  spnt_timestamp IS NOT NULL

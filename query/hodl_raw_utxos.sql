@@ -1,10 +1,11 @@
 SELECT
   o.address
-  , o.block_number as rcvd_block
+  , o.block_timestamp as rcvd_timestamp
+  , EXTRACT(DATE from o.block_timestamp) as rcvd_date
   , o.value as rcvd_v
   , o.rcvd_tx_hash
   , o.rcvd_tx_id
-  , i.block_number as spnt_block
+  , i.block_timestamp as spnt_timestamp
 FROM
   `{project_id}.{dataset}.{table_outputs}` o
 LEFT JOIN
@@ -18,4 +19,4 @@ AND
 AND
   o.rcvd_tx_id = i.rcvd_tx_id
 AND
-  o.block_number <= i.block_number
+  o.block_timestamp <= i.block_timestamp

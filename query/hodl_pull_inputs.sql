@@ -1,5 +1,5 @@
 SELECT 
-  t.block_number
+  t.block_timestamp
   , t.hash as spnt_tx_hash
   , i.index as spnt_tx_id
   , i.spent_transaction_hash as rcvd_tx_hash
